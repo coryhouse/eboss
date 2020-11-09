@@ -17,7 +17,7 @@
 import React from "react";
 import { getCandidates } from "./api/candidatesApi";
 
-export class App extends React.Component {
+export class Candidates extends React.Component {
   constructor(props) {
     super(props); // this must be the first line in every constructor.
 

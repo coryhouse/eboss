@@ -1,5 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { App } from "./App"; // Named import
+import { Candidates } from "./Candidates"; // Named import
+import { BrowserRouter } from "react-router-dom";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+  <BrowserRouter>
+    <Candidates />
+  </BrowserRouter>,
+  document.getElementById("root")
+);
