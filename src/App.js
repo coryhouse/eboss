@@ -15,6 +15,7 @@
  */
 
 import React from "react";
+import { getCandidates } from "./api/candidatesApi";
 
 export class App extends React.Component {
   constructor(props) {
@@ -27,12 +28,9 @@ export class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3001/candidates")
-      .then((response) => {
-        if (!response.ok) throw response;
-        return response.json();
-      })
-      .then((candidates) => this.setState({ candidates: candidates }));
+    getCandidates().then((candidates) =>
+      this.setState({ candidates: candidates })
+    );
   }
 
   // The candidate argument is automatically injected by the map function.
