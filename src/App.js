@@ -36,7 +36,7 @@ export class App extends React.Component {
   // The candidate argument is automatically injected by the map function.
   renderCandidate(candidate) {
     return (
-      <tr>
+      <tr key={candidate.id}>
         <td>{candidate.name}</td>
         <td>{candidate.rank}</td>
       </tr>
