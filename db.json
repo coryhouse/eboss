@@ -1,0 +1,7 @@
+{
+  "candidates": [
+    { "id": 1, "name": "Cory", "rank": "Airman" },
+    { "id": 2, "name": "David", "rank": "General" },
+    { "id": 3, "name": "Ann", "rank": "Tech Sargent" }
+  ]
+}
