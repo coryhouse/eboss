@@ -13,9 +13,7 @@ export function App() {
       <Route path="/candidates">
         <Candidates />
       </Route>
-      <Route path="/details">
-        <CandidateDetails />
-      </Route>
+      <Route path="/details/:candidateId" component={CandidateDetails}></Route>
     </>
   );
 }

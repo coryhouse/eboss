@@ -15,12 +15,12 @@
  */
 
 import React from "react";
+import { Link } from "react-router-dom";
 import { getCandidates } from "./api/candidatesApi";
 
 export class Candidates extends React.Component {
   constructor(props) {
     super(props); // this must be the first line in every constructor.
-
     // This declares state to hold candidates in an empty array.
     this.state = {
       candidates: [],
@@ -36,7 +36,9 @@ export class Candidates extends React.Component {
   renderCandidate(candidate) {
     return (
       <tr key={candidate.id}>
-        <td>{candidate.name}</td>
+        <td>
+          <Link to={"/details/" + candidate.id}>{candidate.name}</Link>
+        </td>
         <td>{candidate.rank}</td>
       </tr>
     );
