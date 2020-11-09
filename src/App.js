@@ -16,15 +16,15 @@
 
 import React from "react";
 
-export const App = () => {
-  const candidates = [
-    { name: "Cory", rank: "Airman" },
-    { name: "David", rank: "General" },
-    { name: "Ann", rank: "Tech Sargent" },
-  ];
+const candidates = [
+  { name: "Cory", rank: "Airman" },
+  { name: "David", rank: "General" },
+  { name: "Ann", rank: "Tech Sargent" },
+];
 
+export class App {
   // The candidate argument is automatically injected by the map function.
-  function renderCandidate(candidate) {
+  renderCandidate(candidate) {
     return (
       <tr>
         <td>{candidate.name}</td>
@@ -33,18 +33,20 @@ export const App = () => {
     );
   }
 
-  return (
-    <ul>
-      <h1>Candidates</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Rank</th>
-          </tr>
-        </thead>
-        <tbody>{candidates.map(renderCandidate)}</tbody>
-      </table>
-    </ul>
-  );
-};
+  render() {
+    return (
+      <ul>
+        <h1>Candidates</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Rank</th>
+            </tr>
+          </thead>
+          <tbody>{candidates.map(this.renderCandidate)}</tbody>
+        </table>
+      </ul>
+    );
+  }
+}
