@@ -22,7 +22,7 @@ const candidates = [
   { name: "Ann", rank: "Tech Sargent" },
 ];
 
-export class App {
+export class App extends React.Component {
   // The candidate argument is automatically injected by the map function.
   renderCandidate(candidate) {
     return (
