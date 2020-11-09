@@ -16,13 +16,25 @@
 
 import React from "react";
 
-const candidates = [
-  { name: "Cory", rank: "Airman" },
-  { name: "David", rank: "General" },
-  { name: "Ann", rank: "Tech Sargent" },
-];
-
 export class App extends React.Component {
+  constructor(props) {
+    super(props); // this must be the first line in every constructor.
+
+    // This declares state to hold candidates in an empty array.
+    this.state = {
+      candidates: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:3001/candidates")
+      .then((response) => {
+        if (!response.ok) throw response;
+        return response.json();
+      })
+      .then((candidates) => this.setState({ candidates: candidates }));
+  }
+
   // The candidate argument is automatically injected by the map function.
   renderCandidate(candidate) {
     return (
@@ -44,7 +56,7 @@ export class App extends React.Component {
               <th>Rank</th>
             </tr>
           </thead>
-          <tbody>{candidates.map(this.renderCandidate)}</tbody>
+          <tbody>{this.state.candidates.map(this.renderCandidate)}</tbody>
         </table>
       </ul>
     );
