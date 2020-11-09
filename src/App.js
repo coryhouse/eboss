@@ -27,10 +27,9 @@ export class App extends React.Component {
     };
   }
 
-  componentDidMount() {
-    getCandidates().then((candidates) =>
-      this.setState({ candidates: candidates })
-    );
+  async componentDidMount() {
+    const candidates = await getCandidates();
+    this.setState({ candidates: candidates });
   }
 
   // The candidate argument is automatically injected by the map function.
