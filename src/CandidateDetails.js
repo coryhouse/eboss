@@ -19,13 +19,15 @@ export class CandidateDetails extends React.Component {
   }
 
   render() {
-    if (this.state.candidate === null) return null;
+    const { candidate, docs } = this.state;
+
+    if (candidate === null) return null;
     return (
       <>
         <h1>Details</h1>
-        {this.state.candidate.name}
+        {candidate.name}
         <ul>
-          {this.state.docs.map((doc) => {
+          {docs.map((doc) => {
             return <li>{doc.content}</li>;
           })}
         </ul>
