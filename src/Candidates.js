@@ -1,17 +1,10 @@
 /**
- * 1. Get candidates from mock API
- * 2. Show a loading indicator (spinner)
- * 3. Handle loading errors
- * 4. Create voting page
- * 4. Configure routes between pages
- * 5. Vote on candidate
- * 6. Display votes on candidates page
- * 7. Styling
- * 8. Using reusable components
- * 9. Keys
- * 10. propTypes
- * 11. Testing
- *
+ * 1. Show a loading indicator (spinner)
+ * 1. Handle loading errors
+ * 1. Vote on candidate
+ * 1. Display votes on candidates page
+ * 1. Testing
+ * 1. Redux
  */
 
 import React from "react";
