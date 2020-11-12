@@ -14,11 +14,11 @@ export class CandidateDetails extends React.Component {
   }
 
   async componentDidMount() {
-    const candidate = await getCandidateById(
-      this.props.match.params.candidateId
-    );
-    const docs = await getCandidateDocs(this.props.match.params.candidateId);
-    this.setState({ candidate: candidate, docs: docs });
+    const { candidateId } = this.props.match.params; // Object destructuring
+    const candidate = await getCandidateById(candidateId);
+    const docs = await getCandidateDocs(candidateId);
+    // Using Object shorthand syntax because the left and right hand side match
+    this.setState({ candidate, docs });
   }
 
   render() {
