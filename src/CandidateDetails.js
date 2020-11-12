@@ -1,6 +1,7 @@
 import React from "react";
 import { getCandidateById } from "./api/candidatesApi";
 import { getCandidateDocs } from "./api/candidateDocsApi";
+import { Button } from "./reusable/Button";
 
 const ratings = [6, 7, 8, 9, 10];
 
