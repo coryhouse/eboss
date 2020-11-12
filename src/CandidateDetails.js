@@ -19,8 +19,7 @@ export class CandidateDetails extends React.Component {
       getCandidateById(candidateId),
       getCandidateDocs(candidateId),
     ]).then((promises) => {
-      const candidate = promises[0];
-      const docs = promises[1];
+      const [candidate, docs] = promises;
       // Using Object shorthand syntax because the left and right hand side match
       this.setState({ candidate, docs });
     });
