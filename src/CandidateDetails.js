@@ -37,7 +37,7 @@ export class CandidateDetails extends React.Component {
 
         <h2>Vote!</h2>
         {ratings.map((rating) => (
-          <button style={{ marginRight: 5 }}>{rating}</button>
+          <Button style={{ marginRight: 5 }}>{rating}</Button>
         ))}
       </>
     );
