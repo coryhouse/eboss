@@ -15,14 +15,13 @@ export class CandidateDetails extends React.Component {
 
   async componentDidMount() {
     const { candidateId } = this.props.match.params; // Object destructuring
-    Promise.all([
+    const promises = await Promise.all([
       getCandidateById(candidateId),
       getCandidateDocs(candidateId),
-    ]).then((promises) => {
-      const [candidate, docs] = promises;
-      // Using Object shorthand syntax because the left and right hand side match
-      this.setState({ candidate, docs });
-    });
+    ]);
+    const [candidate, docs] = promises;
+    // Using Object shorthand syntax because the left and right hand side match
+    this.setState({ candidate, docs });
   }
 
   render() {
