@@ -1,6 +1,10 @@
 # Day 1 Quiz
 
 1. What is JSX? How does it differ from HTML?
+   className instead of class.
+   htmlFor instead of for.
+   inline styles are objects
+   styles are camelCased instead of kebab-cased
 2. Name 2 ways to declare a React component
 3. What generator did we use to create our app? Who supports it?
 4. What is the name for arguments passed to a component?
@@ -14,7 +18,7 @@
 12. What technology lets us view our orignal source code in the browser?
 13. What command do we run to start the app?
 14. How did we debug our code?
-15. What attribute did we apply when iterating over an array in JSX? What was it important?
+15. What attribute did we apply when iterating over an array in JSX? Why was it important?
 16. What method is required on all class components? What do we put inside that method?
 17. What technique did we use to break our JSX down into smaller pieces?
 18. Can you put an if statement inside your returned JSX? If not, what can you do instead?
