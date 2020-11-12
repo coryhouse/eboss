@@ -27,10 +27,18 @@ export class Candidates extends React.Component {
     };
   }
 
+  // Async/await
   async componentDidMount() {
     const candidates = await getCandidates();
     this.setState({ candidates: candidates });
   }
+
+  // Promise based version
+  // componentDidMount() {
+  //   getCandidates().then((candidates) => {
+  //     this.setState({ candidates: candidates });
+  //   });
+  // }
 
   // The candidate argument is automatically injected by the map function.
   renderCandidate(candidate) {
