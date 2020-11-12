@@ -31,13 +31,15 @@ export class CandidateDetails extends React.Component {
         {candidate.name}
         <ul>
           {docs.map((doc) => {
-            return <li>{doc.content}</li>;
+            return <li key={doc.id}>{doc.content}</li>;
           })}
         </ul>
 
         <h2>Vote!</h2>
         {ratings.map((rating) => (
-          <Button style={{ marginRight: 5 }}>{rating}</Button>
+          <Button key={rating} style={{ marginRight: 5 }}>
+            {rating}
+          </Button>
         ))}
       </>
     );
