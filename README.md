@@ -1,3 +1,43 @@
+# Day 1 Quiz
+
+1. What is JSX? How does it differ from HTML?
+2. Name 2 ways to declare a React component
+3. What generator did we use to create our app? Who supports it?
+4. What is the name for arguments passed to a component?
+5. What React feature do we use to declare data that changes?
+6. When declaring a constructor, what should the first line always contain?
+7. What lifecycle method did we use to call an API?
+8. What browser feature did we use to make an HTTP request?
+9. What file is the entry point for our app?
+10. What technology is compiling our code so it runs in old browsers?
+11. Is JSX sent to the browser? If not, what is?
+12. What technology lets us view our orignal source code in the browser?
+13. What command do we run to start the app?
+14. How did we debug our code?
+15. What attribute did we apply when iterating over an array in JSX? What was it important?
+16. What method is required on all class components? What do we put inside that method?
+17. What technique did we use to break our JSX down into smaller pieces?
+18. Can you put an if statement inside your returned JSX? If not, what can you do instead?
+19. What file contains the scripts that we run to start, build, and test our app? What section declares those scripts?
+20. What npm package did we use to create a local mock API?
+21. What file determines the data the mock API returns?
+22. We implemented asynchronous logic using 2 approaches. What were they? How do they differ?
+23. What package did we use to implement routing?
+24. Is our routing client-side or server-side? What's difference?
+25. Where are our routes declared?
+26. How did we declare and read the URL parameter passed to CandidateDetails?
+27. Where do we declare the DOM element where our app renders?
+28. What package did we use to run the app and the mock API at the same time?
+29. What is React?
+30. What tools does react-scripts use behind the scenes?
+31. What does the curly brace mean in JSX?
+32. What must every class component extend?
+33. What tool are we using to format our code on save?
+34. What does a string in an import path mean? What folder does that resolve to?
+35. How do we handle public vs private?
+36. What site did I show that included a list of useful React app generators?
+37. Where are our app's dependencies declared?
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
