@@ -2,6 +2,8 @@ import React from "react";
 import { getCandidateById } from "./api/candidatesApi";
 import { getCandidateDocs } from "./api/candidateDocsApi";
 
+const ratings = [6, 7, 8, 9, 10];
+
 export class CandidateDetails extends React.Component {
   state = {
     candidate: null,
@@ -31,6 +33,11 @@ export class CandidateDetails extends React.Component {
             return <li>{doc.content}</li>;
           })}
         </ul>
+
+        <h2>Vote!</h2>
+        {ratings.map((rating) => (
+          <button style={{ marginRight: 5 }}>{rating}</button>
+        ))}
       </>
     );
   }
