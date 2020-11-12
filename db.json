@@ -3,5 +3,14 @@
     { "id": 1, "name": "Cory", "rank": "Airman" },
     { "id": 2, "name": "David", "rank": "General" },
     { "id": 3, "name": "Ann", "rank": "Tech Sargent" }
+  ],
+  "candidateDocs": [
+    { "id": 1, "content": "Content here", "candidateId": 1 },
+    { "id": 2, "content": "Content 2 here", "candidateId": 1 },
+    { "id": 3, "content": "Content 3 here", "candidateId": 1 },
+    { "id": 4, "content": "Content 4 here", "candidateId": 2 },
+    { "id": 5, "content": "Content 5 here", "candidateId": 2 },
+    { "id": 6, "content": "Content 6 here", "candidateId": 3 },
+    { "id": 7, "content": "Content 7 here", "candidateId": 3 }
   ]
 }
