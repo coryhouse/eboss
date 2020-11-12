@@ -2,16 +2,11 @@ import React from "react";
 import { getCandidateById } from "./api/candidatesApi";
 import { getCandidateDocs } from "./api/candidateDocsApi";
 
-// Exercise 1: Display candidate docs on this page.
 export class CandidateDetails extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      candidate: null,
-      docs: [],
-    };
-  }
+  state = {
+    candidate: null,
+    docs: [],
+  };
 
   async componentDidMount() {
     const { candidateId } = this.props.match.params; // Object destructuring
