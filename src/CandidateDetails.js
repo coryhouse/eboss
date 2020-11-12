@@ -1,14 +1,15 @@
 import React from "react";
 import { getCandidateById } from "./api/candidatesApi";
+import { getCandidateDocs } from "./api/candidateDocsApi";
 
-// Exercise 3: Display candidate's name and rank. Hint: use the ID that we're displaying
-// Hint: For example: http://localhost:3001/candidates/1 loads candidate with ID 1.
+// Exercise 1: Display candidate docs on this page.
 export class CandidateDetails extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       candidate: null,
+      docs: [],
     };
   }
 
@@ -16,7 +17,8 @@ export class CandidateDetails extends React.Component {
     const candidate = await getCandidateById(
       this.props.match.params.candidateId
     );
-    this.setState({ candidate: candidate });
+    const docs = await getCandidateDocs(this.props.match.params.candidateId);
+    this.setState({ candidate: candidate, docs: docs });
   }
 
   render() {
@@ -25,6 +27,11 @@ export class CandidateDetails extends React.Component {
       <>
         <h1>Details</h1>
         {this.state.candidate.name}
+        <ul>
+          {this.state.docs.map((doc) => {
+            return <li>{doc.content}</li>;
+          })}
+        </ul>
       </>
     );
   }
