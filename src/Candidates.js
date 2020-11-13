@@ -11,6 +11,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { getCandidates } from "./api/candidatesApi";
+import { getScores } from "./api/scoresApi";
+import { getCandidateWithAverageScore } from "./utils/candidateUtils";
 
 export class Candidates extends React.Component {
   constructor(props) {
@@ -23,8 +25,14 @@ export class Candidates extends React.Component {
 
   // Async/await
   async componentDidMount() {
-    const candidates = await getCandidates();
-    this.setState({ candidates: candidates });
+    const [candidates, scores] = await Promise.all([
+      getCandidates(),
+      getScores(),
+    ]);
+    const candidatesWithScore = candidates.map((c) => {
+      return getCandidateWithAverageScore(c, scores);
+    });
+    this.setState({ candidates: candidatesWithScore });
   }
 
   // Promise based version
@@ -42,6 +50,7 @@ export class Candidates extends React.Component {
           <Link to={"/details/" + candidate.id}>{candidate.name}</Link>
         </td>
         <td>{candidate.rank}</td>
+        <td>{candidate.averageScore}</td>
       </tr>
     );
   }
@@ -55,6 +64,7 @@ export class Candidates extends React.Component {
             <tr>
               <th>Name</th>
               <th>Rank</th>
+              <th>Score</th>
             </tr>
           </thead>
           <tbody>{this.state.candidates.map(this.renderCandidate)}</tbody>
