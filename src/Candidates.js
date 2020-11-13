@@ -32,7 +32,7 @@ class Candidates extends React.Component {
       getCandidates(),
       getScores(),
     ]);
-    loadCandidatesSuccess(candidates);
+    this.props.loadCandidatesSuccess(candidates);
     const candidatesWithScore = candidates.map((c) => {
       return getCandidateWithAverageScore(c, scores);
     });
