@@ -10,6 +10,8 @@ export function getCandidateWithAverageScore(candidate, scores) {
   };
 }
 
-function getAverageFromArray(array) {
-  return array.reduce((a, b) => a + b) / array.length;
+export function getAverageFromArray(array) {
+  if (!array) return null;
+  if (array.length === 0) return null;
+  return array.reduce((a, b) => a + b, 0) / array.length;
 }
