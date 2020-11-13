@@ -13,8 +13,11 @@ import { Link } from "react-router-dom";
 import { getCandidates } from "./api/candidatesApi";
 import { getScores } from "./api/scoresApi";
 import { getCandidateWithAverageScore } from "./utils/candidateUtils";
+import { connect } from "react-redux";
+import { loadCandidatesSuccess } from "./redux/actions/candidateActions";
+import { bindActionCreators } from "redux";
 
-export class Candidates extends React.Component {
+class Candidates extends React.Component {
   constructor(props) {
     super(props); // this must be the first line in every constructor.
     // This declares state to hold candidates in an empty array.
@@ -29,6 +32,7 @@ export class Candidates extends React.Component {
       getCandidates(),
       getScores(),
     ]);
+    loadCandidatesSuccess(candidates);
     const candidatesWithScore = candidates.map((c) => {
       return getCandidateWithAverageScore(c, scores);
     });
@@ -73,3 +77,22 @@ export class Candidates extends React.Component {
     );
   }
 }
+
+// This function determines what parts of the Redux store are available to this component
+function mapStateToProps(state) {
+  return {
+    candidates: state.candidates,
+  };
+}
+
+// This function determines what actions are available in our component
+// It also wraps each action in a call to dispatch so that Redux is notified when we call the function. (optional)
+function mapDispatchToProps(dispatch) {
+  return {
+    loadCandidatesSuccess: bindActionCreators(loadCandidatesSuccess, dispatch),
+  };
+}
+
+// Connect our Candidates component to the Redux store and provide the
+// props and actions we declared up above in mapStateToProps and mapDispatchToProps.
+export default connect(mapStateToProps, mapDispatchToProps)(Candidates);
