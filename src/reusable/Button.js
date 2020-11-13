@@ -3,19 +3,21 @@ import styles from "./Button.module.css";
 import PropTypes from "prop-types";
 
 export default function Button(props) {
+  // The rest variable contains all properties passed in on props except for children.
+  const { children, ...rest } = props;
   return (
     <button
-      onClick={props.onClick}
       className={styles.root}
-      style={props.style}
-      id={props.id}
+      // Apply any other props we haven't documented yet to this button using the rest/spread syntax
+      {...rest}
     >
-      {props.children}
+      {children}
     </button>
   );
 }
 
 Button.propTypes = {
+  "aria-label": PropTypes.string,
   style: PropTypes.object,
   onClick: PropTypes.func,
   children: PropTypes.any.isRequired,
