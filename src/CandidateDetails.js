@@ -27,20 +27,28 @@ export class CandidateDetails extends React.Component {
     if (candidate === null) return null;
     return (
       <>
-        <h1>Details</h1>
-        {candidate.name}
-        <ul>
-          {docs.map((doc) => {
-            return <li key={doc.id}>{doc.content}</li>;
-          })}
-        </ul>
+        <section>
+          <h1>Details for {candidate.name}</h1>
 
-        <h2>Vote!</h2>
-        {ratings.map((rating) => (
-          <Button key={rating} style={{ marginRight: 5 }}>
-            {rating}
-          </Button>
-        ))}
+          <ul>
+            {docs.map((doc) => {
+              return <li key={doc.id}>{doc.content}</li>;
+            })}
+          </ul>
+        </section>
+
+        <section>
+          <h2>Vote!</h2>
+          {ratings.map((rating) => (
+            <Button
+              aria-label={`Score ${candidate.name} as a ${rating}`}
+              key={rating}
+              style={{ marginRight: 5 }}
+            >
+              {rating}
+            </Button>
+          ))}
+        </section>
       </>
     );
   }
