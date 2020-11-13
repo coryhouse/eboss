@@ -11,4 +11,8 @@ context("details", () => {
     cy.findByText("Content 2 here");
     cy.findByText("Content 3 here");
   });
+
+  it("should change the button color and save the vote when a vote button is clicked", () => {
+    cy.findByRole("button", { name: "Score Cory as a 6" }).click();
+  });
 });
