@@ -1,5 +1,5 @@
 export async function getScores() {
-  const response = await fetch("http://localhost:3001/scores?candidateId=");
+  const response = await fetch("http://localhost:3001/scores");
   if (!response.ok) throw response;
   return response.json(); // this returns a promise.
 }
