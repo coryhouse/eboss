@@ -1,6 +1,7 @@
 import React from "react";
 import { getCandidateById } from "./api/candidatesApi";
 import { getCandidateDocs } from "./api/candidateDocsApi";
+import { saveScore } from "./api/scoresApi";
 import Button from "./reusable/Button";
 
 const ratings = [6, 7, 8, 9, 10];
@@ -19,6 +20,12 @@ export class CandidateDetails extends React.Component {
     ]);
     // Using Object shorthand syntax because the left and right hand side match
     this.setState({ candidate, docs });
+  }
+
+  async vote(score) {
+    await saveScore(this.state.candidate.id, score);
+    // Redirect to candidates using React Router
+    this.props.history.push("/candidates");
   }
 
   render() {
@@ -41,6 +48,7 @@ export class CandidateDetails extends React.Component {
           <h2>Vote!</h2>
           {ratings.map((rating) => (
             <Button
+              onClick={() => this.vote(rating)}
               aria-label={`Score ${candidate.name} as a ${rating}`}
               key={rating}
               style={{ marginRight: 5 }}
