@@ -1,5 +1,5 @@
 import React from "react";
-import { Candidates } from "./Candidates";
+import Candidates from "./Candidates";
 import { CandidateDetails } from "./CandidateDetails";
 import { Route, Link } from "react-router-dom";
 
