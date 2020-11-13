@@ -1,10 +1,11 @@
 /**
+ * 1. Integration Testing with Cypress
+ * 1. Redux
+ * 1. Error handling
  * 1. Show a loading indicator (spinner)
  * 1. Handle loading errors
  * 1. Vote on candidate
  * 1. Display votes on candidates page
- * 1. Testing
- * 1. Redux
  */
 
 import React from "react";
