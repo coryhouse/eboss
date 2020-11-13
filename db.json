@@ -12,5 +12,6 @@
     { "id": 5, "content": "Content 5 here", "candidateId": 2 },
     { "id": 6, "content": "Content 6 here", "candidateId": 3 },
     { "id": 7, "content": "Content 7 here", "candidateId": 3 }
-  ]
+  ],
+  "scores": [{ "id": 3, "candidateId": 3, "value": 10 }]
 }
